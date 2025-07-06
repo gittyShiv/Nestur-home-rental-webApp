@@ -1,0 +1,96 @@
+body{
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.container{
+    flex:1;
+}
+
+.navbar{
+    height:5rem;
+    background-color: white;
+}
+.nav-link{
+    
+    color:#222222 ;
+}
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+.f-info-links,.f-company {
+    width: 100%;
+    text-align: center;
+}
+.f-info-socials {
+    width: 100%;
+    text-align: center;
+}
+.f-info-socials i{
+    margin-top: 1rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    font-size: 1.8rem;
+}
+.f-info{
+    text-align: center;
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+/* cards */
+.card{
+    border: none;
+    margin-bottom: 2rem;
+    object-fit: cover;
+}
+.card-img-top{
+    border-radius: 1rem;
+    /* width: 100%; */
+}
+.card-body{
+    padding: 0rem;
+}
+.listingLink{
+    text-decoration: none;
+}
+/* heart button  */
+.favorite-btn {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .favorite-btn:hover {
+    transform: scale(1.2) translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  .favorite-btn i {
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+  .form-control{
+    border: 1px solid rgb(116, 94, 94);
+  }
+  .create-label{
+    font-weight: 650;
+  }
+  .addBtn{
+    color: white;
+    background-color: #FF385C;
+  }
+  /* single listing detail */
+  .show-img{
+    height: 50vh;
+    width: 85vh;
+    margin-bottom: 1rem;
+  }
+.list-det {
+  margin-top: 1.5rem;
+}
