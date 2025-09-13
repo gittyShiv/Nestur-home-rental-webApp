@@ -14,7 +14,7 @@ It integrates **authentication, authorization, image uploads, geolocation, and d
 
 - 📦 **CRUD Functionality**  
   - Create, Read, Update, Delete property listings  
-  - Add and delete reviews with ratings  
+  - Add and delete the reviews with ratings  
 
 - 🖼️ **Image Uploads**  
   - Upload images with **Multer**  
