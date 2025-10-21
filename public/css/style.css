@@ -15,7 +15,12 @@ body {
     height: 5rem;
     background-color: white;
 }
-
+/* logo (added) */
+.navbar-logo {
+    height:100px; /* adjust as needed to fit your navbar */
+    width: auto;
+    display: block;
+}
 .fa-compass {
     color: #fe424d;
     font-size: 2rem;
@@ -58,8 +63,8 @@ body {
 }
 
 .f-info-socials i {
-    font-size: 1.2rem;
-    margin-right: 1rem;
+    font-size: 2rem;
+    margin: 1rem;
 }
 
 .f-info {
