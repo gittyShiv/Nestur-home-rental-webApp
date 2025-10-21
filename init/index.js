@@ -1,20 +1,26 @@
 const mongoose = require("mongoose");
 const initData = require("./data.js");
-const Listing  = require("../models/listing.js");
+const Listing = require("../models/listing.js");
 
+const MONGO_URL = "mongodb://127.0.0.1:27017/Nestur";
 
-main().then(()=>{
-    console.log("connection working")
-})
-.catch(err => console.log(err));
+main()
+  .then(() => {
+    console.log("connected to DB");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/Nestora');
+  await mongoose.connect(MONGO_URL);
 }
 
-const initDB = async()=>{
-    await Listing.deleteMany({});
-    await Listing.insertMany(initData.data); // change it acoording to github
-    console.log("data was initialised");
+const initDB = async () => {
+  await Listing.deleteMany({});
+  initData.data = initData.data.map((obj) => ({...obj,owner: "65bf87a39b00b6095a998f83"}))
+  await Listing.insertMany(initData.data);
+  console.log("data was initialized");
 };
-initDB();
 
+initDB();
