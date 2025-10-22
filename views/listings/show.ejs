@@ -1,7 +1,10 @@
 <% layout("/layouts/boilerplate.ejs") %>
 <script>
-    const mapToken = "<%= process.env.MAP_TOKEN %>";
-    const listing = <%- JSON.stringify(listing) %>;
+  const mapToken = "<%= process.env.MAP_TOKEN %>";
+  const listing = <%- JSON.stringify(listing) %>;
+  console.log('inline: mapToken length =', (mapToken || '').length);
+  console.log('inline: listing present =', typeof listing !== 'undefined');
+  // optional: console.log(listing);
 </script>
 <div class="row mt-3">
     <div class="col-8 offset-3">  
@@ -91,11 +94,18 @@
     
     </div>
     <div  class="col-8 offset-3 mb-3">
-        <h3>Where you'll be!</h3>
-        <div id="map">
+    <h3>Where you'll be!</h3>
 
-        </div>
-    </div>
+    <% if (listing && listing.geometry && Array.isArray(listing.geometry.coordinates)) { %>
+      <div id="map"></div>
+      <!-- only include the client map script if geometry likely exists -->
+      <script src="/js/map.js"></script>
+    <% } else { %>
+      <div class="alert alert-warning" role="alert">
+        Location not available for this listing yet.
+      </div>
+    <% } %>
+</div>
 
 </div>
 <script src="/js/map.js"></script>
