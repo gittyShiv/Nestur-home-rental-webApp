@@ -1,135 +1,136 @@
-# 🏡 Nestur | Home Rental and Listing Web App
+# 🏡 Nestur - Travel & Stay Discovery Platform
 
-Nestur is a **full-stack rental and property listing web application** where users can create, manage, and explore rental listings with interactive maps and reviews.  
-
-It integrates **authentication, authorization, image uploads, geolocation, and deployment**, making it a production-ready project that demonstrates end-to-end web development.
+Nestur is a full-stack web application inspired by Wanderlust, designed to help travelers discover, list, and review stays from around the world. It’s built using Node.js, Express, MongoDB, and Cloudinary for image storage, providing a smooth and scalable travel listing experience.
 
 ---
 
-## 🚀 Features
-
-- 🔑 **Authentication & Authorization**  
-  - User signup/login/logout with **Passport.js**  
-  - Role-based permissions (only listing/review authors can edit/delete)  
-
-- 📦 **CRUD Functionality**  
-  - Create, Read, Update, Delete property listings  
-  - Add and delete the reviews with ratings  
-
-- 🖼️ **Image Uploads**  
-  - Upload images with **Multer**  
-  - Store & serve images via **Cloudinary CDN**  
-  - Automatic image transformations for scalability  
-
-- 🗺️ **Geolocation & Maps**  
-  - Forward geocoding with **Mapbox SDK**  
-  - Interactive maps with property markers  
-  - Stored geospatial data with MongoDB `2dsphere` index  
-
-- 🛡️ **Security**  
-  - Password hashing with **bcrypt**  
-  - **Helmet** for secure HTTP headers  
-  - **CSRF protection**, rate limiting, and input sanitization  
-
-- 🌐 **Deployment**  
-  - Backend deployed on **Render**  
-  - Database on **MongoDB Atlas**  
-  - Images on **Cloudinary**
+### 📊 Contributors ⭐ Forks 🌟 Stargazers 📜 License
 
 ---
 
-## 🏗️ Tech Stack
+## 📖 About The Project
 
-**Frontend**  
-- EJS (server-side rendering)  
-- Bootstrap (responsive UI)  
+Nestur is a web platform that allows users to explore and share beautiful travel destinations. Users can list new stays, upload images via Cloudinary, manage profiles, and browse listings created by others — all while data is safely stored in MongoDB.
 
-**Backend**  
-- Node.js, Express.js  
-- Passport.js (authentication)  
-- Multer (file handling)  
-- Cloudinary SDK (image storage)  
-- Mapbox SDK (geocoding & maps)  
-
-**Database**  
-- MongoDB Atlas + Mongoose ODM  
-
-**Deployment**  
-- Render (backend)  
-- Cloudinary (images)  
+The project runs on an Express.js server and follows MVC architecture for maintainability and clarity.
 
 ---
 
-## 📂 Project Structure
+## 🎯 Features
 
-```
-nestur/
-├─ index.js              # App entry point
-├─ /models               # Mongoose schemas (User, Listing, Review)
-├─ /routes               # Express routes
-├─ /controllers          # Controller logic
-├─ /views                # EJS templates
-├─ /public               # Static files (CSS, JS)
-├─ /utils                # Helpers & middleware
-└─ .env                  # Environment variables
-```
+- 🏠 Add, edit, and delete travel listings  
+- 🖼️ Upload and manage images using Cloudinary  
+- 👤 User authentication and session management  
+- 🗺️ View location details and dynamic maps  
+- 🧱 Modular MVC architecture with EJS templates  
+- 🧩 Environment-based configuration using `.env`  
 
 ---
 
-## ⚙️ Setup & Installation
+## 🧰 Built With
+
+- **Node.js (v18 recommended)**  
+- **Express.js**  
+- **MongoDB (local or Atlas)**  
+- **Cloudinary**  
+- **EJS**  
+- **Nodemon**  
+- **dotenv**
+
+---
+
+## 🛠️ Getting Started
+
+### ✅ Prerequisites
+
+Ensure you have the following installed on your system:
+
+- Node.js (v18 or higher)  
+- MongoDB  
+- Nodemon (globally)
+
+---
+
+## 📥 Installation
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/gittyShiv/Nestur-home-rental-webApp
-   cd nestur
+   git clone https://github.com/Kkumarprajapati/Nestur-major-project.git
+   cd Nestur-major-project
    ```
 
-2. **Install dependencies**
+2. **Set up the database**
+   - Create a `.env` file in the root directory.  
+   - Add the following line:
+     ```bash
+     ATLASDB_URL=mongodb://127.0.0.1:27017/nestur
+     ```
+
+3. **Configure Cloudinary**
+   - Create a free account on [Cloudinary](https://cloudinary.com/).  
+   - Obtain your credentials and add them to `.env`:
+     ```bash
+     CLOUD_NAME=your_cloud_name
+     CLOUD_API_KEY=your_api_key
+     CLOUD_API_SECRET=your_api_secret
+     ```
+
+4. **Set a secret key for sessions**
+   ```bash
+   SECRET=your_secure_secret
+   ```
+
+5. **Install project dependencies**
    ```bash
    npm install
    ```
 
-3. **Configure environment variables**  
-   Create a `.env` file and add:
+6. **Run the application**
    ```bash
-   MONGODB_URI=<your-mongodb-atlas-uri>
-   SESSION_SECRET=<your-session-secret>
-   CLOUDINARY_CLOUD_NAME=<your-cloudinary-cloud-name>
-   CLOUDINARY_API_KEY=<your-cloudinary-api-key>
-   CLOUDINARY_API_SECRET=<your-cloudinary-api-secret>
-   MAPBOX_TOKEN=<your-mapbox-access-token>
-   NODE_ENV=development
+   nodemon app.js
    ```
 
-4. **Run the app**
+7. **Access the project**
+   - Open your browser and visit:  
+     👉 [http://localhost:8080](http://localhost:8080)
+
+---
+
+## 🧪 Development Notes
+
+- Ensure MongoDB is running locally or connected via Atlas before starting the server.  
+- Images are stored on Cloudinary; local uploads are not retained.  
+- `.env` should never be committed to Git for security reasons.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!  
+
+1. Fork the repository  
+2. Create a new branch  
    ```bash
-   npm run dev
+   git checkout -b feature/AmazingFeature
    ```
-   Visit [http://localhost:3000](http://localhost:3000) 🚀
+3. Commit your changes  
+   ```bash
+   git commit -m "Add AmazingFeature"
+   ```
+4. Push to your fork and open a Pull Request  
 
 ---
 
-## 🔍 Future Improvements
+## 📄 License
 
-- 🗂️ Advanced search & filtering (price range, location, keywords)  
-- 📧 Email verification & password reset (Nodemailer)  
-- 📊 Analytics (popular listings, user activity)  
-- 🛠️ Switch to **JWT auth** for stateless scalability  
-- 📱 React frontend for modern SPA experience  
+Distributed under the **MIT License**.  
+See `LICENSE` for more details.
 
 ---
 
-## 📸 Screenshots
-
-*(Add screenshots of your homepage, listing page, map, and upload form here for a strong GitHub profile.)*
-
----
-
-## 👤 Author
+## 📬 Contact
 
 **Shivam Maurya**  
-- 📧 [shivamvision07@gmail.com](mailto:shivamvision07@gmail.com)  
-- 💼 [LinkedIn](https://www.linkedin.com)  
-- 💻 [GitHub](https://github.com/github_username)
+📧 [shivamvision07@gmail.com](mailto:shivamvision07@gmail.com)  
+🔗 [Nestur GitHub Repository](https://github.com/Kkumarprajapati/Nestur-major-project)
 
----
